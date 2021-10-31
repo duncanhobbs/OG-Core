@@ -565,7 +565,7 @@ def plot_all(base_output_path, reform_output_path, save_path):
     plot_aggregates(base_tpi, base_params, reform_tpi=reform_tpi,
                     reform_params=reform_params,
                     var_list=['Y', 'K', 'L', 'C'], plot_type='pct_diff',
-                    num_years_to_plot=150,
+                    num_years_to_plot=max(base_params.T, 150),
                     start_year=base_params.start_year,
                     vertical_line_years=[
                         base_params.start_year + base_params.tG1,
@@ -577,7 +577,8 @@ def plot_all(base_output_path, reform_output_path, save_path):
     plot_aggregates(base_tpi, base_params, reform_tpi=reform_tpi,
                     reform_params=reform_params,
                     var_list=['D', 'G', 'TR', 'total_tax_revenue'],
-                    plot_type='pct_diff', num_years_to_plot=150,
+                    plot_type='pct_diff',
+                    num_years_to_plot=max(base_params.T, 150),
                     start_year=base_params.start_year,
                     vertical_line_years=[
                         base_params.start_year + base_params.tG1,
@@ -589,7 +590,8 @@ def plot_all(base_output_path, reform_output_path, save_path):
     plot_aggregates(base_tpi, base_params, reform_tpi=reform_tpi,
                     reform_params=reform_params,
                     var_list=['r'],
-                    plot_type='levels', num_years_to_plot=150,
+                    plot_type='levels',
+                    num_years_to_plot=max(base_params.T, 150),
                     start_year=base_params.start_year,
                     vertical_line_years=[
                         base_params.start_year + base_params.tG1,
@@ -600,7 +602,8 @@ def plot_all(base_output_path, reform_output_path, save_path):
     plot_aggregates(base_tpi, base_params, reform_tpi=reform_tpi,
                     reform_params=reform_params,
                     var_list=['w'],
-                    plot_type='levels', num_years_to_plot=150,
+                    plot_type='levels',
+                    num_years_to_plot=max(base_params.T, 150),
                     start_year=base_params.start_year,
                     vertical_line_years=[
                         base_params.start_year + base_params.tG1,
@@ -610,7 +613,8 @@ def plot_all(base_output_path, reform_output_path, save_path):
 
     # Debt-GDP in base and reform-- vertical lines at tG1, tG2
     plot_gdp_ratio(base_tpi, base_params, reform_tpi, reform_params,
-                   var_list=['D'], num_years_to_plot=150,
+                   var_list=['D'],
+                   num_years_to_plot=max(base_params.T, 150),
                    start_year=base_params.start_year,
                    vertical_line_years=[
                            base_params.start_year + base_params.tG1,
@@ -620,7 +624,8 @@ def plot_all(base_output_path, reform_output_path, save_path):
 
     # Tax revenue to GDP in base and reform-- vertical lines at tG1, tG2
     plot_gdp_ratio(base_tpi, base_params, reform_tpi, reform_params,
-                   var_list=['total_tax_revenue'], num_years_to_plot=150,
+                   var_list=['total_tax_revenue'],
+                   num_years_to_plot=max(base_params.T, 150),
                    start_year=base_params.start_year,
                    vertical_line_years=[
                            base_params.start_year + base_params.tG1,
